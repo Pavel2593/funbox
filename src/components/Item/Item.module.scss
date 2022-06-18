@@ -4,7 +4,6 @@ $borderRadius: 12px;
 .item {
     max-width: 320px;
     width: 100%;
-    // margin: 0 40px 40px;
     margin: 0 15px 30px;
     display: flex;
     flex-direction: column;
@@ -36,6 +35,7 @@ $borderRadius: 12px;
         position: relative;
         overflow: hidden;
         background: linear-gradient(135deg, transparent 24px, $defaultColor 0);
+        cursor: pointer;
 
         &:hover {
             background: linear-gradient(135deg, transparent 24px, $defaultHoverColor 0);
@@ -139,6 +139,7 @@ $borderRadius: 12px;
 
 .selected .item_wrapper {
     background: linear-gradient(135deg, transparent 24px, $selectedColor 0);
+    cursor: none;
 
     & .weight {
         background-color: $selectedColor;
