@@ -1,0 +1,25 @@
+@use './_main/reset';
+@use './_main/font';
+@use './_main/color' as *;
+@use './_main/styles';
+
+html, body, #root, main {
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Trebuchet MS';
+}
+
+#root {
+    position: relative;
+    background-image: url('./../../../public/background.png');
+}
+
+.main {
+    padding-top: 45px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, #000 100%);
+}

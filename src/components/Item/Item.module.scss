@@ -1,0 +1,177 @@
+@use './../../assets/styles/_main/color' as *;
+$borderItem: 4px;
+$borderRadius: 12px;
+.item {
+    max-width: 320px;
+    width: 100%;
+    // margin: 0 40px 40px;
+    margin: 0 15px 30px;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 480px) {
+        margin: 0 15px 30px;
+    }
+
+    @media (min-width: 768px) {
+        margin: 0 30px 60px;
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 290px;
+        margin: 0 25px 40px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 320px;
+        margin: 0 40px 40px;
+    }
+
+    &_wrapper {
+        margin-bottom: 15px;
+        padding: $borderItem;
+        box-sizing: border-box;
+        border-radius: $borderRadius;
+        flex-grow: 1;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, transparent 24px, $defaultColor 0);
+
+        &:hover {
+            background: linear-gradient(135deg, transparent 24px, $defaultHoverColor 0);
+    
+            & .weight {
+                background-color: $defaultHoverColor;
+            }
+        }
+    }
+
+    &__box {
+        height: 100%;
+        padding: {
+            top: (25px - $borderItem);
+            right: (30px - $borderItem);
+            bottom: (290px - $borderItem);
+            left: (30px - $borderItem);
+        };
+        border-radius: $borderRadius - $borderItem;
+        box-sizing: border-box;
+        background: linear-gradient(135deg, transparent 23px, $backgroundItemCard 0) ;
+
+        @media (min-width: 480px) and (max-width: 1023px){
+            padding: {
+                top: (25px - $borderItem);
+                right: (50px - $borderItem);
+                bottom: (290px - $borderItem);
+                left: (50px - $borderItem);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            padding: {
+                top: (25px - $borderItem);
+                right: (50px - $borderItem);
+                bottom: (290px - $borderItem);
+                left: (50px - $borderItem);
+            }
+        }
+    }
+
+    &__description {
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: $textGrey;
+    }
+
+    &__title {
+        margin-bottom: 5px;
+        font-size: 48px;
+        font-weight: bold;
+        color: $textBlack
+    }
+
+    &__taste {
+        margin-bottom: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        color: $textBlack;
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__portions,
+    &__gift,
+    &__review {
+        font-size: 14px;
+        color: $textGrey;
+    }
+
+    .weight {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        background-color: $defaultColor;
+
+        &__value {
+            font-size: 42px;
+            color: $textWhite;
+        }
+
+        &__unit {
+            font-size: 17px;
+            color: $textWhite;
+        }
+    }
+}
+
+.selected .item_wrapper {
+    background: linear-gradient(135deg, transparent 24px, $selectedColor 0);
+
+    & .weight {
+        background-color: $selectedColor;
+    }
+
+    &:hover {
+        background: linear-gradient(135deg, transparent 24px, $selectedHoverColor 0);
+
+        & .item__description {
+            color: $selectedHoverColor;
+        }
+
+        & .weight {
+            background-color: $selectedHoverColor;
+        }
+    }
+}
+
+.disabled .item_wrapper {
+    background: linear-gradient(135deg, transparent 24px, $disabledColor 0);
+
+    .item {
+        &__description,
+        &__title,
+        &__taste,
+        &__portions,
+        &__gift,
+        &__review {
+            color: $disabledColor
+        }
+    }
+
+    & .weight {
+        background-color: $disabledColor;
+    }
+}

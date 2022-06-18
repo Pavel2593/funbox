@@ -1,0 +1,19 @@
+@use './../../assets/styles/_main/color' as *;
+.link {
+    font-size: 13px;
+    line-height: 16px;
+    color: $textWhite;
+    text-align: center;
+
+    &__text {
+        color: $defaultColor;
+
+        &_item_hover {
+            color: $defaultHoverColor
+        }
+    }
+}
+
+.link_disabled {
+    color: #ffff66;
+}
