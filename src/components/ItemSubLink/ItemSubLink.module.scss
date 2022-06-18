@@ -1,5 +1,6 @@
 @use './../../assets/styles/_main/color' as *;
 .link {
+    flex-grow: 1;
     font-size: 13px;
     line-height: 16px;
     color: $textWhite;

@@ -27,11 +27,11 @@ $borderRadius: 12px;
     }
 
     &_wrapper {
+        min-height: 480px;
         margin-bottom: 15px;
         padding: $borderItem;
         box-sizing: border-box;
         border-radius: $borderRadius;
-        flex-grow: 1;
         position: relative;
         overflow: hidden;
         background: linear-gradient(135deg, transparent 24px, $defaultColor 0);
